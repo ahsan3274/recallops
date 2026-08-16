@@ -13,8 +13,8 @@ class Settings:
     demo_api_key: str = os.getenv("DEMO_API_KEY", "")
     public_dashboard: bool = os.getenv("PUBLIC_DASHBOARD", "false").lower() == "true"
     enable_public_demo: bool = os.getenv("ENABLE_PUBLIC_DEMO", "false").lower() == "true"
-    public_demo_daily_limit: int = int(os.getenv("PUBLIC_DEMO_DAILY_LIMIT", "10"))
-    public_demo_ttl_minutes: int = int(os.getenv("PUBLIC_DEMO_TTL_MINUTES", "20"))
+    public_demo_daily_limit: int = int(os.getenv("PUBLIC_DEMO_DAILY_LIMIT", "25"))
+    public_demo_ttl_minutes: int = int(os.getenv("PUBLIC_DEMO_TTL_MINUTES", "30"))
     routine_model: str = os.getenv("GEMINI_ROUTINE_MODEL", "gemini-3.5-flash-lite")
     complex_model: str = os.getenv("GEMINI_COMPLEX_MODEL", "gemini-3.5-flash")
     max_model_calls: int = int(os.getenv("MAX_MODEL_CALLS_PER_WORKFLOW", "4"))

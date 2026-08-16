@@ -44,8 +44,8 @@ class DeploymentTests(unittest.TestCase):
             encoding="utf-8"
         )
         self.assertIn("PUBLIC_DASHBOARD=true,ENABLE_PUBLIC_DEMO=true", publish)
-        self.assertIn("PUBLIC_DEMO_DAILY_LIMIT=10", publish)
-        self.assertIn("PUBLIC_DEMO_TTL_MINUTES=20", publish)
+        self.assertIn("PUBLIC_DEMO_DAILY_LIMIT=25", publish)
+        self.assertIn("PUBLIC_DEMO_TTL_MINUTES=30", publish)
         self.assertIn("--member=allUsers", publish)
         self.assertIn("recallops-recall", publish)
         self.assertNotIn("recallops-supply", publish)
