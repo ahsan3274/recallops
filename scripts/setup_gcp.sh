@@ -76,4 +76,4 @@ gcloud iam service-accounts add-iam-policy-binding "$PUSH_ACCOUNT" \
   --member="serviceAccount:${PUBSUB_SERVICE_AGENT}" \
   --role=roles/iam.serviceAccountTokenCreator >/dev/null
 
-echo "Google Cloud prerequisites are ready. Review docs/DEPLOYMENT.md before running deploy_gcp.sh."
+echo "Google Cloud prerequisites are ready. Review the README deployment section before running deploy_gcp.sh."
