@@ -1,0 +1,30 @@
+[
+  {
+    "claim_auto_approval_limit": 5000.0,
+    "contract_id": "CONTRACT-001",
+    "payment_terms_days": 30,
+    "recall_liability_percent": 0.9,
+    "supplier_id": "SUP-001"
+  },
+  {
+    "claim_auto_approval_limit": 5000.0,
+    "contract_id": "CONTRACT-002",
+    "payment_terms_days": 30,
+    "recall_liability_percent": 0.8,
+    "supplier_id": "SUP-002"
+  },
+  {
+    "claim_auto_approval_limit": 3500.0,
+    "contract_id": "CONTRACT-003",
+    "payment_terms_days": 45,
+    "recall_liability_percent": 0.7,
+    "supplier_id": "SUP-003"
+  },
+  {
+    "claim_auto_approval_limit": 5000.0,
+    "contract_id": "CONTRACT-004",
+    "payment_terms_days": 30,
+    "recall_liability_percent": 0.85,
+    "supplier_id": "SUP-004"
+  }
+]

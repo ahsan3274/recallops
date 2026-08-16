@@ -1,0 +1,40 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "recallops"
+version = "0.1.0"
+description = "Event-driven product recall, supply continuity, and financial recovery simulation"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+  "fastapi>=0.115,<1",
+  "uvicorn[standard]>=0.32,<1",
+]
+
+[project.optional-dependencies]
+google = [
+  "google-adk[a2a,agent-identity,mcp]>=1.29.0",
+  "a2a-sdk[http-server]>=0.3.4,<0.4",
+  "google-cloud-firestore>=2.19,<3",
+  "google-cloud-pubsub>=2.25,<3",
+  "google-genai>=1,<2",
+  "httpx>=0.28,<1",
+  "opentelemetry-sdk>=1.30,<2",
+  "opentelemetry-exporter-gcp-trace>=1.9,<2",
+]
+dev = [
+  "ruff>=0.9,<1",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

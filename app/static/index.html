@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RecallOps governed multi-agent product recall control room">
+  <title>RecallOps · Multi-agent recall control room</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #061019;
+      --bg-soft: #0a1722;
+      --panel: #0f1d2a;
+      --panel-2: #132536;
+      --line: #263d50;
+      --line-bright: #385b75;
+      --text: #f3f7fb;
+      --muted: #9fb0c1;
+      --blue: #70a7ff;
+      --cyan: #58d5d0;
+      --green: #52d697;
+      --yellow: #ffd166;
+      --red: #ff7585;
+      --violet: #b69cff;
+      --shadow: 0 22px 65px #0007;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 92% 0, #173e6260, transparent 28%),
+        radial-gradient(circle at 4% 42%, #0c554c45, transparent 24%),
+        var(--bg);
+      color: var(--text);
+      font: 15px/1.5 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .12;
+      background-image: linear-gradient(#ffffff0c 1px, transparent 1px), linear-gradient(90deg, #ffffff0c 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, black, transparent 70%);
+    }
+    a { color: inherit; }
+    button { font: inherit; }
+    .shell { width: min(1460px, calc(100% - 40px)); margin: 0 auto; }
+    .topbar {
+      position: sticky;
+      z-index: 30;
+      top: 0;
+      border-bottom: 1px solid #23394b99;
+      background: #061019e8;
+      backdrop-filter: blur(18px);
+    }
+    .topbar-inner { display: flex; align-items: center; justify-content: space-between; min-height: 66px; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 11px; font-weight: 900; font-size: 20px; letter-spacing: -.035em; }
+    .brand-mark { display: grid; place-items: center; width: 32px; height: 32px; border: 1px solid #527eaa; border-radius: 10px; color: var(--blue); background: #132b40; font-size: 12px; }
+    .brand span { color: var(--blue); }
+    .nav { display: flex; gap: 20px; color: var(--muted); font-size: 13px; font-weight: 700; }
+    .nav a { text-decoration: none; }
+    .nav a:hover { color: var(--text); }
+    .runtime-chip { display: flex; align-items: center; gap: 8px; color: var(--green); font-size: 12px; font-weight: 800; }
+    .runtime-chip::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; box-shadow: 0 0 16px currentColor; }
+
+    .hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(380px, .85fr); gap: 32px; padding: 70px 0 32px; align-items: stretch; }
+    .eyebrow { color: var(--cyan); text-transform: uppercase; letter-spacing: .14em; font-size: 12px; font-weight: 900; }
+    h1 { max-width: 900px; margin: 16px 0 20px; font-size: clamp(3.1rem, 6.1vw, 6.3rem); line-height: .94; letter-spacing: -.067em; }
+    h1 span { color: var(--blue); }
+    .lede { max-width: 790px; margin: 0; color: var(--muted); font-size: 19px; line-height: 1.58; }
+    .stack-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 25px; }
+    .chip { padding: 8px 11px; border: 1px solid #345573; border-radius: 999px; background: #10243a; color: #d8e8f9; font-size: 11px; font-weight: 800; }
+    .panel {
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(145deg, #112130ed, #0b1722f2);
+      box-shadow: var(--shadow);
+    }
+    .demo-launch { padding: 24px; overflow: hidden; }
+    .demo-launch::after { content: ""; position: absolute; width: 220px; height: 220px; right: -100px; top: -120px; border: 1px solid #4d789b; border-radius: 50%; box-shadow: 0 0 0 36px #173a5533, 0 0 0 72px #173a551e; }
+    .panel-label { color: var(--muted); font-size: 10px; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
+    .demo-launch h2 { margin: 10px 0 8px; font-size: 29px; letter-spacing: -.04em; }
+    .demo-launch p { margin: 0; color: var(--muted); }
+    .primary, .event-button {
+      position: relative;
+      border: 1px solid #6795d2;
+      border-radius: 11px;
+      background: #2b69c7;
+      color: white;
+      padding: 11px 15px;
+      font-weight: 850;
+      cursor: pointer;
+      transition: transform .15s ease, border-color .15s ease, background .15s ease;
+    }
+    .primary:hover:not(:disabled), .event-button:hover:not(:disabled) { transform: translateY(-1px); border-color: #91baff; }
+    button:disabled { cursor: not-allowed; opacity: .48; }
+    .launch-row { display: flex; align-items: center; gap: 12px; margin-top: 22px; }
+    .launch-note { color: var(--muted); font-size: 11px; }
+    .run-status { margin-top: 16px; padding: 12px; border: 1px solid var(--line); border-radius: 11px; background: #09151f; color: #cbd8e4; font-size: 12px; }
+    .run-status strong { color: var(--green); }
+
+    .metric-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 18px 0 76px; }
+    .metric { padding: 17px 18px; border: 1px solid var(--line); border-radius: 14px; background: #0d1a26cc; }
+    .metric-label { display: block; color: var(--muted); font-size: 10px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+    .metric-value { display: block; margin-top: 5px; font-size: 30px; font-weight: 900; letter-spacing: -.045em; }
+    .metric-delta { color: var(--green); font-size: 10px; font-weight: 800; }
+
+    section { scroll-margin-top: 85px; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin: 0 0 24px; }
+    .section-head h2 { max-width: 780px; margin: 7px 0 0; font-size: clamp(2rem, 3.2vw, 3.4rem); line-height: 1.02; letter-spacing: -.05em; }
+    .section-head p { max-width: 520px; margin: 0; color: var(--muted); }
+
+    .company-section, .simulation-section, .state-section, .proof-section { padding: 25px 0 80px; }
+    .company-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .agent-card { min-height: 345px; padding: 22px; }
+    .agent-card.blue { border-color: #456fa0; }
+    .agent-card.green { border-color: #2d8060; }
+    .agent-card.yellow { border-color: #8c7135; }
+    .agent-top { display: flex; justify-content: space-between; gap: 15px; }
+    .department { color: var(--muted); font-size: 10px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+    .agent-name { margin: 7px 0 6px; font-size: 24px; font-weight: 900; letter-spacing: -.035em; }
+    .agent-card.green .agent-name { color: var(--green); }
+    .agent-card.yellow .agent-name { color: var(--yellow); }
+    .agent-status { display: grid; place-items: center; min-width: 44px; height: 27px; border-radius: 999px; border: 1px solid #365675; color: var(--blue); background: #10243a; font-size: 9px; font-weight: 900; }
+    .mission { min-height: 44px; color: var(--muted); font-size: 13px; }
+    .agent-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); }
+    .mini-title { color: var(--muted); font-size: 9px; text-transform: uppercase; font-weight: 900; letter-spacing: .1em; }
+    .clean-list { margin: 8px 0 0; padding: 0; list-style: none; }
+    .clean-list li { position: relative; margin: 7px 0; padding-left: 14px; color: #d2dce6; font-size: 11px; }
+    .clean-list li::before { content: ""; position: absolute; left: 0; top: .6em; width: 5px; height: 5px; border-radius: 50%; background: var(--blue); }
+    .data-counts { display: grid; grid-template-columns: repeat(7, 1fr); gap: 9px; margin-top: 14px; }
+    .data-count { padding: 13px 8px; text-align: center; border: 1px solid var(--line); border-radius: 11px; background: #0b1722; }
+    .data-count strong { display: block; font-size: 20px; }
+    .data-count span { color: var(--muted); font-size: 9px; }
+
+    .simulation-layout { display: grid; grid-template-columns: minmax(0, .86fr) minmax(440px, 1.14fr); gap: 18px; align-items: start; }
+    .event-console { padding: 20px; }
+    .event-list { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
+    .event-card { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; gap: 13px; align-items: center; padding: 14px; border: 1px solid var(--line); border-radius: 13px; background: #0a1722; transition: border-color .2s ease, opacity .2s ease; }
+    .event-card.complete { border-color: #2d765b; }
+    .event-card.available { border-color: #507fb0; box-shadow: inset 0 0 0 1px #507fb044; }
+    .event-number { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 11px; background: #142b40; color: var(--blue); font-size: 13px; font-weight: 900; }
+    .event-card.complete .event-number { color: var(--green); background: #102b22; }
+    .event-copy strong { display: block; font-size: 14px; }
+    .event-copy span { display: block; color: var(--muted); font-size: 10px; }
+    .event-copy code { color: #b8ceea; font-size: 9px; }
+    .event-button { min-width: 96px; padding: 8px 10px; border-radius: 9px; font-size: 10px; }
+    .event-button.complete { border-color: #327759; background: #123326; color: var(--green); }
+    .event-button.locked { border-color: var(--line); background: #101b25; color: var(--muted); }
+    .safety-note { margin: 14px 0 0; padding: 11px 12px; border-radius: 10px; background: #231d0d; border: 1px solid #695a2f; color: #e6d59b; font-size: 10px; }
+
+    .conversation-panel { padding: 20px; min-height: 570px; }
+    .conversation-head { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+    .conversation-head h3 { margin: 0; font-size: 20px; }
+    .legend { display: flex; gap: 8px; color: var(--muted); font-size: 9px; }
+    .legend span::before { content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 4px; border-radius: 2px; background: var(--blue); }
+    .legend .handoff::before { background: var(--green); }
+    .conversation { display: flex; flex-direction: column; gap: 14px; max-height: 660px; margin-top: 18px; padding-right: 5px; overflow: auto; }
+    .empty { padding: 70px 20px; text-align: center; color: var(--muted); }
+    .event-group { position: relative; padding-left: 27px; }
+    .event-group::before { content: ""; position: absolute; left: 7px; top: 9px; bottom: -20px; width: 1px; background: var(--line); }
+    .event-group:last-child::before { bottom: 12px; }
+    .event-dot { position: absolute; left: 1px; top: 4px; width: 13px; height: 13px; border: 3px solid #0e1b27; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 0 1px #498b91; }
+    .event-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+    .event-heading strong { font-size: 13px; }
+    .event-heading code { color: var(--muted); font-size: 9px; }
+    .action-card { margin: 7px 0; padding: 12px 13px; border: 1px solid #2c465a; border-radius: 11px; background: #0d1b27; }
+    .action-card.handoff { border-color: #2f785e; background: #0d211b; }
+    .action-card.guardrail { border-color: #8d7338; background: #231e0f; }
+    .action-meta { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .action-agent { color: var(--blue); font-size: 9px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+    .action-card.handoff .action-agent { color: var(--green); }
+    .action-card.guardrail .action-agent { color: var(--yellow); }
+    .trace { max-width: 160px; overflow: hidden; color: #668098; font-size: 8px; text-overflow: ellipsis; white-space: nowrap; }
+    .action-title { margin: 4px 0 6px; font-size: 13px; font-weight: 850; }
+    .message { margin: 5px 0; padding: 8px 9px; border-left: 2px solid var(--blue); background: #0a151f; color: #d6e0e9; font-size: 10px; }
+    .action-card.handoff .message { border-color: var(--green); background: #091a15; }
+
+    .state-layout { display: grid; grid-template-columns: 1.15fr .85fr; gap: 18px; }
+    .case-panel, .decision-panel, .finance-panel { padding: 20px; }
+    .case-top { display: flex; justify-content: space-between; gap: 18px; align-items: start; }
+    .case-name { margin: 5px 0; font-size: 24px; letter-spacing: -.035em; }
+    .status-badge { padding: 7px 10px; border-radius: 999px; color: var(--green); background: #102d23; border: 1px solid #337b5e; font-size: 10px; font-weight: 900; text-transform: uppercase; }
+    .status-badge.frozen { color: var(--red); background: #30151b; border-color: #8c3b49; }
+    .case-meta { color: var(--muted); font-size: 11px; }
+    .lot-table { width: 100%; margin-top: 17px; border-collapse: collapse; font-size: 11px; }
+    .lot-table th { padding: 9px; border-bottom: 1px solid var(--line); color: var(--muted); text-align: left; font-size: 9px; letter-spacing: .08em; text-transform: uppercase; }
+    .lot-table td { padding: 10px 9px; border-bottom: 1px solid #1e3141; }
+    .lot-status { font-weight: 850; text-transform: capitalize; }
+    .lot-status.quarantined { color: var(--red); }
+    .lot-status.available { color: var(--green); }
+    .decision-stack { display: flex; flex-direction: column; gap: 14px; }
+    .offer-list { display: flex; flex-direction: column; gap: 8px; margin-top: 13px; }
+    .offer { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; padding: 11px; border: 1px solid var(--line); border-radius: 10px; background: #0a1722; }
+    .offer.selected { border-color: #337d5e; background: #0d211a; }
+    .offer.expired { border-color: #74414b; opacity: .72; }
+    .offer strong { display: block; font-size: 12px; }
+    .offer span { color: var(--muted); font-size: 9px; }
+    .offer-decision { align-self: center; color: var(--green); font-size: 9px; font-weight: 900; text-transform: uppercase; }
+    .offer.expired .offer-decision { color: var(--red); }
+    .finance-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; margin-top: 13px; }
+    .finance-cell { padding: 10px; border: 1px solid var(--line); border-radius: 9px; background: #0a1722; }
+    .finance-cell span { display: block; color: var(--muted); font-size: 8px; text-transform: uppercase; }
+    .finance-cell strong { display: block; margin-top: 3px; font-size: 12px; }
+
+    .proof-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .architecture { padding: 22px; }
+    .architecture-flow { display: flex; align-items: center; gap: 7px; margin-top: 18px; overflow-x: auto; }
+    .arch-node { flex: 1 0 105px; padding: 13px 9px; border: 1px solid var(--line-bright); border-radius: 11px; background: #102131; text-align: center; font-size: 10px; font-weight: 850; }
+    .arch-arrow { color: #5c7890; font-weight: 900; }
+    .stack-panel { padding: 22px; }
+    .product-chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 15px; }
+    .product-chip { padding: 8px 10px; border: 1px solid #34546c; border-radius: 8px; background: #112538; color: #d8e5f2; font-size: 10px; font-weight: 800; }
+    .cost-strip { display: flex; gap: 14px; margin-top: 17px; padding: 13px; border: 1px solid #2d7258; border-radius: 11px; background: #0d211a; }
+    .cost-strip strong { color: var(--green); }
+    .cost-strip span { color: var(--muted); font-size: 10px; }
+    footer { margin-top: 35px; border-top: 1px solid var(--line); padding: 28px 0 50px; color: var(--muted); font-size: 11px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; }
+    .toast { position: fixed; z-index: 50; right: 20px; bottom: 20px; max-width: 390px; padding: 13px 15px; border: 1px solid #56799a; border-radius: 11px; background: #102335; box-shadow: var(--shadow); color: #e6eff8; font-size: 12px; transform: translateY(120px); opacity: 0; transition: .22s ease; }
+    .toast.show { transform: translateY(0); opacity: 1; }
+    .toast.error { border-color: #8a4050; background: #2a141a; }
+    .loading { animation: pulse 1.2s infinite; }
+    @keyframes pulse { 50% { opacity: .48; } }
+    @media (max-width: 1050px) {
+      .hero, .simulation-layout, .state-layout, .proof-grid { grid-template-columns: 1fr; }
+      .company-grid { grid-template-columns: 1fr; }
+      .agent-card { min-height: 0; }
+      .data-counts { grid-template-columns: repeat(4, 1fr); }
+      .metric-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 680px) {
+      .shell { width: min(100% - 24px, 1460px); }
+      .nav { display: none; }
+      .runtime-chip { font-size: 0; }
+      .hero { padding-top: 42px; }
+      h1 { font-size: 3.2rem; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 12px; }
+      .metric-grid, .data-counts { grid-template-columns: repeat(2, 1fr); }
+      .agent-columns { grid-template-columns: 1fr; }
+      .event-card { grid-template-columns: 38px 1fr; }
+      .event-button { grid-column: 1 / -1; width: 100%; }
+      .finance-grid { grid-template-columns: 1fr; }
+      .footer-inner { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="shell topbar-inner">
+      <div class="brand"><div class="brand-mark">RO</div>Recall<span>Ops</span></div>
+      <nav class="nav" aria-label="Page sections">
+        <a href="#company">Company</a><a href="#simulation">Simulation</a><a href="#state">Business state</a><a href="#proof">Architecture</a>
+      </nav>
+      <div class="runtime-chip" id="runtime-chip">Checking cloud runtime</div>
+    </div>
+  </div>
+
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Governed multi-agent enterprise response</div>
+        <h1>Watch a recall move through an <span>entire company.</span></h1>
+        <p class="lede">RecallOps turns warehouse and safety events into coordinated action across Product Safety, Procurement, and Finance—using Google ADK, Gemini, Agent Registry, private A2A communication, and deterministic policy tools.</p>
+        <div class="stack-chips"><span class="chip">Google ADK + Gemini</span><span class="chip">Agent Registry + A2A</span><span class="chip">Pub/Sub event bus</span><span class="chip">Firestore state</span><span class="chip">Cloud Trace evidence</span></div>
+      </div>
+      <aside class="panel demo-launch">
+        <div class="panel-label">Guided cloud simulation</div>
+        <h2>Run the story one event at a time.</h2>
+        <p>Start from clean synthetic company data, trigger four bounded events, and watch the agents explain every resulting action.</p>
+        <div class="launch-row"><button class="primary" id="start-demo">Start guided run</button><span class="launch-note" id="demo-mode">Loading demo controls…</span></div>
+        <div class="run-status" id="run-status"><strong>Ready:</strong> explore the current verified cloud state or start a fresh guided run.</div>
+      </aside>
+    </section>
+
+    <section class="metric-grid" aria-label="Current business metrics">
+      <div class="metric"><span class="metric-label">Quarantined units</span><strong class="metric-value" id="metric-quarantined">—</strong><span class="metric-delta">inventory safety</span></div>
+      <div class="metric"><span class="metric-label">Affected customers</span><strong class="metric-value" id="metric-customers">—</strong><span class="metric-delta">notifications prepared</span></div>
+      <div class="metric"><span class="metric-label">Purchase orders</span><strong class="metric-value" id="metric-pos">—</strong><span class="metric-delta">continuity response</span></div>
+      <div class="metric"><span class="metric-label">Recovery claim</span><strong class="metric-value" id="metric-claim">—</strong><span class="metric-delta">contract-backed</span></div>
+      <div class="metric"><span class="metric-label">Pending approvals</span><strong class="metric-value" id="metric-approvals">—</strong><span class="metric-delta">governed authority</span></div>
+    </section>
+
+    <section class="company-section" id="company">
+      <div class="section-head"><div><div class="eyebrow">01 · Company map</div><h2>Three agents with different jobs, data, and authority.</h2></div><p>The simulated company is intentionally small enough to understand, but complete enough to demonstrate cross-functional enterprise work.</p></div>
+      <div class="company-grid" id="company-grid"></div>
+      <div class="data-counts" id="data-counts"></div>
+    </section>
+
+    <section class="simulation-section" id="simulation">
+      <div class="section-head"><div><div class="eyebrow">02 · Event simulation</div><h2>Trigger movement. Then watch the organization respond.</h2></div><p>Each public control maps to one predefined synthetic event. No arbitrary payloads or direct database writes are exposed.</p></div>
+      <div class="simulation-layout">
+        <div class="panel event-console">
+          <div class="panel-label">Enterprise event bus</div>
+          <div class="event-list" id="event-list"></div>
+          <div class="safety-note">Public safety controls: fixed events only · enforced order · expiring run · independent daily limit · maximum four model calls per workflow.</div>
+        </div>
+        <div class="panel conversation-panel">
+          <div class="conversation-head"><h3>Agent conversation and actions</h3><div class="legend"><span>Tool action</span><span class="handoff">A2A exchange</span></div></div>
+          <div class="conversation" id="conversation"><div class="empty">Waiting for company state…</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="state-section" id="state">
+      <div class="section-head"><div><div class="eyebrow">03 · Business state</div><h2>The actions produce visible operational changes.</h2></div><p>Everything below is curated synthetic data from Firestore. Customer-level records and private service details are not exposed.</p></div>
+      <div class="state-layout">
+        <div class="panel case-panel">
+          <div class="case-top"><div><div class="panel-label">Product safety case</div><div class="case-name" id="case-name">Loading product…</div><div class="case-meta" id="case-meta"></div></div><div class="status-badge" id="listing-status">—</div></div>
+          <table class="lot-table"><thead><tr><th>Lot</th><th>Warehouse</th><th>Units</th><th>Recall match</th><th>Status</th></tr></thead><tbody id="lot-body"></tbody></table>
+        </div>
+        <div class="decision-stack">
+          <div class="panel decision-panel"><div class="panel-label">Procurement decision</div><div class="offer-list" id="offer-list"></div></div>
+          <div class="panel finance-panel"><div class="panel-label">Finance recovery</div><div class="finance-grid" id="finance-grid"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof-section" id="proof">
+      <div class="section-head"><div><div class="eyebrow">04 · Architecture and evidence</div><h2>Agentic coordination with deterministic control.</h2></div><p>Gemini interprets and coordinates. Typed tools enforce permissions, certifications, approval thresholds, idempotency, and mutations.</p></div>
+      <div class="proof-grid">
+        <div class="panel architecture"><div class="panel-label">Live request path</div><div class="architecture-flow"><div class="arch-node">Pub/Sub<br>events</div><div class="arch-arrow">→</div><div class="arch-node">Recall<br>ADK + Gemini</div><div class="arch-arrow">→</div><div class="arch-node">Registry<br>A2A</div><div class="arch-arrow">→</div><div class="arch-node">Supply +<br>Finance</div><div class="arch-arrow">→</div><div class="arch-node">Typed tools<br>Firestore</div></div></div>
+        <div class="panel stack-panel"><div class="panel-label">Verified Google stack</div><div class="product-chips"><span class="product-chip">Google ADK</span><span class="product-chip">Gemini 3.5 Flash-Lite</span><span class="product-chip">Vertex AI</span><span class="product-chip">Agent Registry</span><span class="product-chip">A2A / Agent Cards</span><span class="product-chip">3× Cloud Run</span><span class="product-chip">Pub/Sub</span><span class="product-chip">Firestore</span><span class="product-chip">Cloud Trace</span><span class="product-chip">Cloud Logging</span><span class="product-chip">IAM + OIDC</span></div><div class="cost-strip"><strong>Scale to zero</strong><span>Cloud Run min 0 / max 1 · one shared image · no GKE, SQL, Redis, VM, or vector database.</span></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="shell footer-inner"><span>RecallOps · Google All Things Agentic Hackathon · synthetic data only</span><span id="footer-runtime">Loading runtime details…</span></div></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const appState = {health: null, company: null, story: null, summary: null, runId: sessionStorage.getItem("recallops-demo-run") || "", busyStep: ""};
+    const money = new Intl.NumberFormat("en-US", {style: "currency", currency: "USD"});
+    const countLabels = {products: "products", inventory_lots: "inventory lots", orders: "orders", suppliers: "suppliers", warehouses: "warehouses", contracts: "contracts", invoices: "invoices"};
+
+    function node(tag, className, text) {
+      const element = document.createElement(tag);
+      if (className) element.className = className;
+      if (text !== undefined && text !== null) element.textContent = text;
+      return element;
+    }
+
+    async function requestJSON(path, options = {}) {
+      const response = await fetch(path, options);
+      let payload = {};
+      try { payload = await response.json(); } catch (_) { payload = {}; }
+      if (!response.ok) throw new Error(payload.detail || `Request failed with ${response.status}`);
+      return payload;
+    }
+
+    function showToast(message, isError = false) {
+      const toast = document.querySelector("#toast");
+      toast.textContent = message;
+      toast.className = isError ? "toast show error" : "toast show";
+      clearTimeout(showToast.timer);
+      showToast.timer = setTimeout(() => { toast.className = "toast"; }, 4500);
+    }
+
+    async function loadData() {
+      const [health, company, story, summary] = await Promise.all([
+        requestJSON("/health"), requestJSON("/api/company"), requestJSON("/api/story"), requestJSON("/api/summary")
+      ]);
+      appState.health = health; appState.company = company; appState.story = story; appState.summary = summary;
+      if (story.demo && story.demo.status === "active") {
+        appState.runId = story.demo.run_id;
+        sessionStorage.setItem("recallops-demo-run", appState.runId);
+      }
+      renderAll();
+    }
+
+    function renderAll() {
+      renderRuntime(); renderMetrics(); renderCompany(); renderEvents(); renderConversation(); renderBusinessState();
+    }
+
+    function renderRuntime() {
+      const cloud = appState.health.environment === "production" && appState.health.runtime_mode === "adk";
+      document.querySelector("#runtime-chip").textContent = cloud ? "ADK cloud runtime online" : "Deterministic local runtime online";
+      document.querySelector("#footer-runtime").textContent = cloud ? "Google ADK · Gemini · Agent Registry · Cloud Run" : "Credential-free local simulation";
+      const mode = appState.health.dashboard_mode;
+      const enabled = mode === "public-guided-demo" || mode === "operator";
+      const start = document.querySelector("#start-demo");
+      start.disabled = !enabled;
+      document.querySelector("#demo-mode").textContent = enabled ? "Fixed synthetic events · rate bounded" : "Public exploration view · controls disabled";
+      if (appState.story.demo) {
+        const complete = appState.story.demo.status === "completed";
+        document.querySelector("#run-status").textContent = complete ? "Guided run complete. Every event and action is visible below." : `Active guided run · next event: ${appState.story.demo.next_step || "finishing"}`;
+        start.textContent = complete ? "Start another guided run" : "Resume guided run";
+      }
+    }
+
+    function renderMetrics() {
+      const summary = appState.summary;
+      document.querySelector("#metric-quarantined").textContent = summary.quarantined_units.toLocaleString();
+      document.querySelector("#metric-customers").textContent = summary.affected_customers.toLocaleString();
+      document.querySelector("#metric-pos").textContent = summary.purchase_orders.toLocaleString();
+      document.querySelector("#metric-claim").textContent = money.format(summary.claim_value);
+      document.querySelector("#metric-approvals").textContent = summary.pending_approvals.toLocaleString();
+    }
+
+    function renderCompany() {
+      const grid = document.querySelector("#company-grid"); grid.replaceChildren();
+      for (const agent of appState.company.agents) {
+        const card = node("article", `panel agent-card ${agent.color}`);
+        const top = node("div", "agent-top");
+        const title = node("div"); title.append(node("div", "department", agent.department), node("div", "agent-name", agent.name));
+        top.append(title, node("div", "agent-status", "ADK"));
+        card.append(top, node("div", "mission", agent.mission));
+        const columns = node("div", "agent-columns");
+        for (const [label, values] of [["Owned actions", agent.capabilities], ["Owned data", agent.data]]) {
+          const column = node("div"); column.append(node("div", "mini-title", label));
+          const list = node("ul", "clean-list"); values.forEach(value => list.append(node("li", "", value))); column.append(list); columns.append(column);
+        }
+        card.append(columns); grid.append(card);
+      }
+      const counts = document.querySelector("#data-counts"); counts.replaceChildren();
+      for (const [key, value] of Object.entries(appState.company.counts)) {
+        const cell = node("div", "data-count"); cell.append(node("strong", "", value.toLocaleString()), node("span", "", countLabels[key])); counts.append(cell);
+      }
+    }
+
+    function renderEvents() {
+      const list = document.querySelector("#event-list"); list.replaceChildren();
+      const demoEnabled = ["public-guided-demo", "operator"].includes(appState.health.dashboard_mode);
+      for (const event of appState.story.events) {
+        const stateClass = event.completed ? "complete" : event.available ? "available" : "locked";
+        const card = node("article", `event-card ${stateClass}`);
+        card.append(node("div", "event-number", String(event.index).padStart(2, "0")));
+        const copy = node("div", "event-copy"); copy.append(node("strong", "", event.title), node("code", "", event.event_type), node("span", "", `${event.description} ${event.expected}`)); card.append(copy);
+        const button = node("button", `event-button ${stateClass}`);
+        button.type = "button"; button.dataset.step = event.step;
+        button.textContent = appState.busyStep === event.step ? "Processing…" : event.completed ? "Completed" : event.available ? "Trigger event" : "Locked";
+        button.disabled = !demoEnabled || !event.available || Boolean(appState.busyStep);
+        button.addEventListener("click", () => triggerStep(event.step)); card.append(button); list.append(card);
+      }
+    }
+
+    function renderConversation() {
+      const container = document.querySelector("#conversation"); container.replaceChildren();
+      const visible = appState.story.events.filter(event => event.completed && event.actions.length);
+      if (!visible.length) { container.append(node("div", "empty", "Start the guided run and trigger the first event. Agent decisions and business actions will appear here.")); return; }
+      for (const event of visible) {
+        const group = node("article", "event-group"); group.append(node("div", "event-dot"));
+        const heading = node("div", "event-heading"); heading.append(node("strong", "", `${String(event.index).padStart(2, "0")} · ${event.title}`), node("code", "", `${event.event_type} · ${event.event_id}`)); group.append(heading);
+        for (const action of event.actions) {
+          const card = node("div", `action-card ${action.kind}`);
+          const meta = node("div", "action-meta"); meta.append(node("span", "action-agent", action.agent));
+          if (action.trace_id) meta.append(node("span", "trace", `trace ${action.trace_id}`)); card.append(meta, node("div", "action-title", action.title));
+          action.messages.forEach(message => card.append(node("div", "message", message))); group.append(card);
+        }
+        container.append(group);
+      }
+      if (appState.busyStep) container.scrollTop = container.scrollHeight;
+    }
+
+    function renderBusinessState() {
+      const company = appState.company; const currentCase = company.case;
+      document.querySelector("#case-name").textContent = currentCase.name;
+      document.querySelector("#case-meta").textContent = `SKU ${currentCase.sku} · GTIN ${currentCase.gtin} · daily demand ${currentCase.daily_demand} · ${currentCase.affected_orders} matching fulfilled orders`;
+      const status = document.querySelector("#listing-status"); status.textContent = currentCase.listing_status; status.className = currentCase.listing_status === "frozen" ? "status-badge frozen" : "status-badge";
+      const body = document.querySelector("#lot-body"); body.replaceChildren();
+      for (const lot of currentCase.lots) {
+        const row = node("tr"); row.append(node("td", "", `${lot.lot_code} · ${lot.lot_id}`), node("td", "", lot.warehouse), node("td", "", lot.quantity.toLocaleString()), node("td", "", lot.affected ? "Affected" : "Safe"), node("td", `lot-status ${lot.status}`, lot.status)); body.append(row);
+      }
+      const offers = document.querySelector("#offer-list"); offers.replaceChildren();
+      for (const offer of company.procurement.offers) {
+        const expired = offer.certificate_status !== "valid"; const item = node("div", `offer ${offer.selected ? "selected" : expired ? "expired" : ""}`);
+        const copy = node("div"); copy.append(node("strong", "", offer.supplier), node("span", "", `${money.format(offer.unit_price)}/unit · ${offer.lead_time_days} day lead · certificate ${offer.certificate_status}`));
+        const decision = offer.selected ? "Selected" : expired ? "Rejected" : "Eligible"; item.append(copy, node("div", "offer-decision", decision)); offers.append(item);
+      }
+      const finance = document.querySelector("#finance-grid"); finance.replaceChildren();
+      const invoice = company.finance.invoice || {}; const contract = company.finance.contract || {}; const claim = company.finance.claim || {};
+      for (const [label, value] of [["Invoice", invoice.status ? `${invoice.invoice_id} · ${invoice.status}` : "Not held"], ["Liability", contract.recall_liability_percent ? `${Math.round(contract.recall_liability_percent * 100)}% contract` : "90% contract"], ["Claim", claim.claim_amount ? money.format(claim.claim_amount) : "$0.00"]]) {
+        const cell = node("div", "finance-cell"); cell.append(node("span", "", label), node("strong", "", value)); finance.append(cell);
+      }
+    }
+
+    async function startDemo() {
+      const button = document.querySelector("#start-demo"); button.disabled = true; button.classList.add("loading");
+      try {
+        const payload = await requestJSON("/api/demo/start", {method: "POST"});
+        appState.runId = payload.demo.run_id; sessionStorage.setItem("recallops-demo-run", appState.runId);
+        showToast(payload.demo.resumed ? "Resumed the active guided run." : "Synthetic company reset. Trigger the transfer event first.");
+        await loadData(); document.querySelector("#simulation").scrollIntoView({behavior: "smooth"});
+      } catch (error) { showToast(error.message, true); }
+      finally { button.disabled = false; button.classList.remove("loading"); }
+    }
+
+    async function triggerStep(step) {
+      if (!appState.runId) { showToast("Start a guided run before triggering events.", true); return; }
+      appState.busyStep = step; renderEvents();
+      try {
+        await requestJSON(`/api/demo/events/${encodeURIComponent(step)}`, {method: "POST", headers: {"X-Demo-Run": appState.runId}});
+        showToast(`Event published: ${step}. Waiting for the agent workflow…`);
+        for (let attempt = 0; attempt < 90; attempt += 1) {
+          await new Promise(resolve => setTimeout(resolve, attempt === 0 ? 250 : 2000));
+          await loadData();
+          const current = appState.story.events.find(event => event.step === step);
+          if (current && current.completed) { showToast(`${current.title} completed. Review the actions and trigger the next event.`); break; }
+        }
+      } catch (error) { showToast(error.message, true); }
+      finally { appState.busyStep = ""; renderEvents(); }
+    }
+
+    document.querySelector("#start-demo").addEventListener("click", startDemo);
+    loadData().catch(error => {
+      document.querySelector("#runtime-chip").textContent = "Dashboard data unavailable";
+      showToast(error.message, true);
+      console.error(error);
+    });
+  </script>
+</body>
+</html>

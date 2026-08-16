@@ -1,0 +1,16 @@
+{
+  "protocolVersion": "0.3.0",
+  "name": "Financial Recovery",
+  "description": "Calculates recall losses, holds linked supplier invoices, and creates contract-backed recovery claims.",
+  "url": "http://localhost:8000/a2a",
+  "version": "0.1.0",
+  "preferredTransport": "JSONRPC",
+  "capabilities": {"streaming": false, "pushNotifications": false, "stateTransitionHistory": false},
+  "defaultInputModes": ["text/plain", "application/json"],
+  "defaultOutputModes": ["text/plain", "application/json"],
+  "skills": [
+    {"id": "recall_loss_calculation", "name": "Recall loss calculation", "description": "Calculate inventory, refund, disposal, and emergency freight losses.", "tags": ["finance", "loss"]},
+    {"id": "supplier_invoice_hold", "name": "Supplier invoice hold", "description": "Hold open invoices linked to the affected supplier.", "tags": ["invoice", "hold"]},
+    {"id": "supplier_claim_creation", "name": "Supplier claim creation", "description": "Create a contract-backed claim within approval limits.", "tags": ["claim", "contract", "approval"]}
+  ]
+}

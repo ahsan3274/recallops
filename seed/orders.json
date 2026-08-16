@@ -1,0 +1,1202 @@
+[
+  {
+    "customer_email": "customer00001@example.invalid",
+    "customer_id": "CUST-00001",
+    "lines": [
+      {
+        "lot_code": "L2408",
+        "product_id": "PROD-001",
+        "quantity": 1,
+        "unit_price": 5.49
+      }
+    ],
+    "order_id": "ORDER-00001",
+    "ordered_at": "2026-07-01T07:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00002@example.invalid",
+    "customer_id": "CUST-00002",
+    "lines": [
+      {
+        "lot_code": "L2410",
+        "product_id": "PROD-001",
+        "quantity": 2,
+        "unit_price": 5.49
+      }
+    ],
+    "order_id": "ORDER-00002",
+    "ordered_at": "2026-07-01T14:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00003@example.invalid",
+    "customer_id": "CUST-00003",
+    "lines": [
+      {
+        "lot_code": "L2409",
+        "product_id": "PROD-001",
+        "quantity": 2,
+        "unit_price": 5.49
+      }
+    ],
+    "order_id": "ORDER-00003",
+    "ordered_at": "2026-07-01T21:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00004@example.invalid",
+    "customer_id": "CUST-00004",
+    "lines": [
+      {
+        "lot_code": "L2408",
+        "product_id": "PROD-001",
+        "quantity": 1,
+        "unit_price": 5.49
+      }
+    ],
+    "order_id": "ORDER-00004",
+    "ordered_at": "2026-07-02T04:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00005@example.invalid",
+    "customer_id": "CUST-00005",
+    "lines": [
+      {
+        "lot_code": "L2409",
+        "product_id": "PROD-001",
+        "quantity": 1,
+        "unit_price": 5.49
+      }
+    ],
+    "order_id": "ORDER-00005",
+    "ordered_at": "2026-07-02T11:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00006@example.invalid",
+    "customer_id": "CUST-00006",
+    "lines": [
+      {
+        "lot_code": "L2408",
+        "product_id": "PROD-001",
+        "quantity": 2,
+        "unit_price": 5.49
+      }
+    ],
+    "order_id": "ORDER-00006",
+    "ordered_at": "2026-07-02T18:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00007@example.invalid",
+    "customer_id": "CUST-00007",
+    "lines": [
+      {
+        "lot_code": "L2408",
+        "product_id": "PROD-001",
+        "quantity": 2,
+        "unit_price": 5.49
+      }
+    ],
+    "order_id": "ORDER-00007",
+    "ordered_at": "2026-07-03T01:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00008@example.invalid",
+    "customer_id": "CUST-00008",
+    "lines": [
+      {
+        "lot_code": "L2409",
+        "product_id": "PROD-001",
+        "quantity": 3,
+        "unit_price": 5.49
+      }
+    ],
+    "order_id": "ORDER-00008",
+    "ordered_at": "2026-07-03T08:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00009@example.invalid",
+    "customer_id": "CUST-00009",
+    "lines": [
+      {
+        "lot_code": "L2409",
+        "product_id": "PROD-001",
+        "quantity": 1,
+        "unit_price": 5.49
+      }
+    ],
+    "order_id": "ORDER-00009",
+    "ordered_at": "2026-07-03T15:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00010@example.invalid",
+    "customer_id": "CUST-00010",
+    "lines": [
+      {
+        "lot_code": "L2410",
+        "product_id": "PROD-001",
+        "quantity": 2,
+        "unit_price": 5.49
+      }
+    ],
+    "order_id": "ORDER-00010",
+    "ordered_at": "2026-07-03T22:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00011@example.invalid",
+    "customer_id": "CUST-00011",
+    "lines": [
+      {
+        "lot_code": "L2410",
+        "product_id": "PROD-001",
+        "quantity": 1,
+        "unit_price": 5.49
+      }
+    ],
+    "order_id": "ORDER-00011",
+    "ordered_at": "2026-07-04T05:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00012@example.invalid",
+    "customer_id": "CUST-00012",
+    "lines": [
+      {
+        "lot_code": "L2409",
+        "product_id": "PROD-001",
+        "quantity": 1,
+        "unit_price": 5.49
+      }
+    ],
+    "order_id": "ORDER-00012",
+    "ordered_at": "2026-07-04T12:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00013@example.invalid",
+    "customer_id": "CUST-00013",
+    "lines": [
+      {
+        "lot_code": "L2410",
+        "product_id": "PROD-001",
+        "quantity": 2,
+        "unit_price": 5.49
+      }
+    ],
+    "order_id": "ORDER-00013",
+    "ordered_at": "2026-07-04T19:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00014@example.invalid",
+    "customer_id": "CUST-00014",
+    "lines": [
+      {
+        "lot_code": "L2410",
+        "product_id": "PROD-001",
+        "quantity": 3,
+        "unit_price": 5.49
+      }
+    ],
+    "order_id": "ORDER-00014",
+    "ordered_at": "2026-07-05T02:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00015@example.invalid",
+    "customer_id": "CUST-00015",
+    "lines": [
+      {
+        "lot_code": "L2409",
+        "product_id": "PROD-001",
+        "quantity": 3,
+        "unit_price": 5.49
+      }
+    ],
+    "order_id": "ORDER-00015",
+    "ordered_at": "2026-07-05T09:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00016@example.invalid",
+    "customer_id": "CUST-00016",
+    "lines": [
+      {
+        "lot_code": "L2408",
+        "product_id": "PROD-001",
+        "quantity": 3,
+        "unit_price": 5.49
+      }
+    ],
+    "order_id": "ORDER-00016",
+    "ordered_at": "2026-07-05T16:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00017@example.invalid",
+    "customer_id": "CUST-00017",
+    "lines": [
+      {
+        "lot_code": "L2408",
+        "product_id": "PROD-001",
+        "quantity": 1,
+        "unit_price": 5.49
+      }
+    ],
+    "order_id": "ORDER-00017",
+    "ordered_at": "2026-07-05T23:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00018@example.invalid",
+    "customer_id": "CUST-00018",
+    "lines": [
+      {
+        "lot_code": "L2410",
+        "product_id": "PROD-001",
+        "quantity": 1,
+        "unit_price": 5.49
+      }
+    ],
+    "order_id": "ORDER-00018",
+    "ordered_at": "2026-07-06T06:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00019@example.invalid",
+    "customer_id": "CUST-00019",
+    "lines": [
+      {
+        "lot_code": "L2409",
+        "product_id": "PROD-001",
+        "quantity": 1,
+        "unit_price": 5.49
+      }
+    ],
+    "order_id": "ORDER-00019",
+    "ordered_at": "2026-07-06T13:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00020@example.invalid",
+    "customer_id": "CUST-00020",
+    "lines": [
+      {
+        "lot_code": "L2408",
+        "product_id": "PROD-001",
+        "quantity": 1,
+        "unit_price": 5.49
+      }
+    ],
+    "order_id": "ORDER-00020",
+    "ordered_at": "2026-07-06T20:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00021@example.invalid",
+    "customer_id": "CUST-00021",
+    "lines": [
+      {
+        "lot_code": "L2505",
+        "product_id": "PROD-026",
+        "quantity": 2,
+        "unit_price": 5.73
+      }
+    ],
+    "order_id": "ORDER-00021",
+    "ordered_at": "2026-07-07T03:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00022@example.invalid",
+    "customer_id": "CUST-00022",
+    "lines": [
+      {
+        "lot_code": "L2503",
+        "product_id": "PROD-025",
+        "quantity": 2,
+        "unit_price": 5.36
+      }
+    ],
+    "order_id": "ORDER-00022",
+    "ordered_at": "2026-07-07T10:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00023@example.invalid",
+    "customer_id": "CUST-00023",
+    "lines": [
+      {
+        "lot_code": "L2504",
+        "product_id": "PROD-024",
+        "quantity": 3,
+        "unit_price": 4.99
+      }
+    ],
+    "order_id": "ORDER-00023",
+    "ordered_at": "2026-07-07T17:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00024@example.invalid",
+    "customer_id": "CUST-00024",
+    "lines": [
+      {
+        "lot_code": "L2512",
+        "product_id": "PROD-019",
+        "quantity": 3,
+        "unit_price": 3.14
+      }
+    ],
+    "order_id": "ORDER-00024",
+    "ordered_at": "2026-07-08T00:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00025@example.invalid",
+    "customer_id": "CUST-00025",
+    "lines": [
+      {
+        "lot_code": "L2510",
+        "product_id": "PROD-006",
+        "quantity": 3,
+        "unit_price": 4.62
+      }
+    ],
+    "order_id": "ORDER-00025",
+    "ordered_at": "2026-07-08T07:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00026@example.invalid",
+    "customer_id": "CUST-00026",
+    "lines": [
+      {
+        "lot_code": "L2509",
+        "product_id": "PROD-012",
+        "quantity": 3,
+        "unit_price": 6.84
+      }
+    ],
+    "order_id": "ORDER-00026",
+    "ordered_at": "2026-07-08T14:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00027@example.invalid",
+    "customer_id": "CUST-00027",
+    "lines": [
+      {
+        "lot_code": "L2503",
+        "product_id": "PROD-017",
+        "quantity": 2,
+        "unit_price": 2.4
+      }
+    ],
+    "order_id": "ORDER-00027",
+    "ordered_at": "2026-07-08T21:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00028@example.invalid",
+    "customer_id": "CUST-00028",
+    "lines": [
+      {
+        "lot_code": "L2505",
+        "product_id": "PROD-026",
+        "quantity": 3,
+        "unit_price": 5.73
+      }
+    ],
+    "order_id": "ORDER-00028",
+    "ordered_at": "2026-07-09T04:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00029@example.invalid",
+    "customer_id": "CUST-00029",
+    "lines": [
+      {
+        "lot_code": "L2504",
+        "product_id": "PROD-037",
+        "quantity": 3,
+        "unit_price": 3.51
+      }
+    ],
+    "order_id": "ORDER-00029",
+    "ordered_at": "2026-07-09T11:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00030@example.invalid",
+    "customer_id": "CUST-00030",
+    "lines": [
+      {
+        "lot_code": "L2501",
+        "product_id": "PROD-022",
+        "quantity": 1,
+        "unit_price": 4.25
+      }
+    ],
+    "order_id": "ORDER-00030",
+    "ordered_at": "2026-07-09T18:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00031@example.invalid",
+    "customer_id": "CUST-00031",
+    "lines": [
+      {
+        "lot_code": "L2506",
+        "product_id": "PROD-004",
+        "quantity": 2,
+        "unit_price": 6.1
+      }
+    ],
+    "order_id": "ORDER-00031",
+    "ordered_at": "2026-07-10T01:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00032@example.invalid",
+    "customer_id": "CUST-00032",
+    "lines": [
+      {
+        "lot_code": "L2502",
+        "product_id": "PROD-019",
+        "quantity": 1,
+        "unit_price": 3.14
+      }
+    ],
+    "order_id": "ORDER-00032",
+    "ordered_at": "2026-07-10T08:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00033@example.invalid",
+    "customer_id": "CUST-00033",
+    "lines": [
+      {
+        "lot_code": "L2512",
+        "product_id": "PROD-038",
+        "quantity": 2,
+        "unit_price": 3.88
+      }
+    ],
+    "order_id": "ORDER-00033",
+    "ordered_at": "2026-07-10T15:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00034@example.invalid",
+    "customer_id": "CUST-00034",
+    "lines": [
+      {
+        "lot_code": "L2511",
+        "product_id": "PROD-015",
+        "quantity": 2,
+        "unit_price": 7.95
+      }
+    ],
+    "order_id": "ORDER-00034",
+    "ordered_at": "2026-07-10T22:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00035@example.invalid",
+    "customer_id": "CUST-00035",
+    "lines": [
+      {
+        "lot_code": "L2511",
+        "product_id": "PROD-027",
+        "quantity": 2,
+        "unit_price": 6.1
+      }
+    ],
+    "order_id": "ORDER-00035",
+    "ordered_at": "2026-07-11T05:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00036@example.invalid",
+    "customer_id": "CUST-00036",
+    "lines": [
+      {
+        "lot_code": "L2505",
+        "product_id": "PROD-011",
+        "quantity": 1,
+        "unit_price": 6.47
+      }
+    ],
+    "order_id": "ORDER-00036",
+    "ordered_at": "2026-07-11T12:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00037@example.invalid",
+    "customer_id": "CUST-00037",
+    "lines": [
+      {
+        "lot_code": "L2512",
+        "product_id": "PROD-017",
+        "quantity": 3,
+        "unit_price": 2.4
+      }
+    ],
+    "order_id": "ORDER-00037",
+    "ordered_at": "2026-07-11T19:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00038@example.invalid",
+    "customer_id": "CUST-00038",
+    "lines": [
+      {
+        "lot_code": "L2505",
+        "product_id": "PROD-036",
+        "quantity": 3,
+        "unit_price": 3.14
+      }
+    ],
+    "order_id": "ORDER-00038",
+    "ordered_at": "2026-07-12T02:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00039@example.invalid",
+    "customer_id": "CUST-00039",
+    "lines": [
+      {
+        "lot_code": "L2507",
+        "product_id": "PROD-039",
+        "quantity": 3,
+        "unit_price": 4.25
+      }
+    ],
+    "order_id": "ORDER-00039",
+    "ordered_at": "2026-07-12T09:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00040@example.invalid",
+    "customer_id": "CUST-00040",
+    "lines": [
+      {
+        "lot_code": "L2506",
+        "product_id": "PROD-027",
+        "quantity": 1,
+        "unit_price": 6.1
+      }
+    ],
+    "order_id": "ORDER-00040",
+    "ordered_at": "2026-07-12T16:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00041@example.invalid",
+    "customer_id": "CUST-00041",
+    "lines": [
+      {
+        "lot_code": "L2509",
+        "product_id": "PROD-010",
+        "quantity": 2,
+        "unit_price": 6.1
+      }
+    ],
+    "order_id": "ORDER-00041",
+    "ordered_at": "2026-07-12T23:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00042@example.invalid",
+    "customer_id": "CUST-00042",
+    "lines": [
+      {
+        "lot_code": "L2501",
+        "product_id": "PROD-007",
+        "quantity": 1,
+        "unit_price": 4.99
+      }
+    ],
+    "order_id": "ORDER-00042",
+    "ordered_at": "2026-07-13T06:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00043@example.invalid",
+    "customer_id": "CUST-00043",
+    "lines": [
+      {
+        "lot_code": "L2511",
+        "product_id": "PROD-011",
+        "quantity": 1,
+        "unit_price": 6.47
+      }
+    ],
+    "order_id": "ORDER-00043",
+    "ordered_at": "2026-07-13T13:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00044@example.invalid",
+    "customer_id": "CUST-00044",
+    "lines": [
+      {
+        "lot_code": "L2510",
+        "product_id": "PROD-029",
+        "quantity": 1,
+        "unit_price": 6.84
+      }
+    ],
+    "order_id": "ORDER-00044",
+    "ordered_at": "2026-07-13T20:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00045@example.invalid",
+    "customer_id": "CUST-00045",
+    "lines": [
+      {
+        "lot_code": "L2507",
+        "product_id": "PROD-026",
+        "quantity": 3,
+        "unit_price": 5.73
+      }
+    ],
+    "order_id": "ORDER-00045",
+    "ordered_at": "2026-07-14T03:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00046@example.invalid",
+    "customer_id": "CUST-00046",
+    "lines": [
+      {
+        "lot_code": "L2509",
+        "product_id": "PROD-031",
+        "quantity": 2,
+        "unit_price": 7.58
+      }
+    ],
+    "order_id": "ORDER-00046",
+    "ordered_at": "2026-07-14T10:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00047@example.invalid",
+    "customer_id": "CUST-00047",
+    "lines": [
+      {
+        "lot_code": "L2501",
+        "product_id": "PROD-037",
+        "quantity": 3,
+        "unit_price": 3.51
+      }
+    ],
+    "order_id": "ORDER-00047",
+    "ordered_at": "2026-07-14T17:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00048@example.invalid",
+    "customer_id": "CUST-00048",
+    "lines": [
+      {
+        "lot_code": "L2511",
+        "product_id": "PROD-009",
+        "quantity": 3,
+        "unit_price": 5.73
+      }
+    ],
+    "order_id": "ORDER-00048",
+    "ordered_at": "2026-07-15T00:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00049@example.invalid",
+    "customer_id": "CUST-00049",
+    "lines": [
+      {
+        "lot_code": "L2511",
+        "product_id": "PROD-019",
+        "quantity": 2,
+        "unit_price": 3.14
+      }
+    ],
+    "order_id": "ORDER-00049",
+    "ordered_at": "2026-07-15T07:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00050@example.invalid",
+    "customer_id": "CUST-00050",
+    "lines": [
+      {
+        "lot_code": "L2505",
+        "product_id": "PROD-009",
+        "quantity": 2,
+        "unit_price": 5.73
+      }
+    ],
+    "order_id": "ORDER-00050",
+    "ordered_at": "2026-07-15T14:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00051@example.invalid",
+    "customer_id": "CUST-00051",
+    "lines": [
+      {
+        "lot_code": "L2508",
+        "product_id": "PROD-012",
+        "quantity": 1,
+        "unit_price": 6.84
+      }
+    ],
+    "order_id": "ORDER-00051",
+    "ordered_at": "2026-07-15T21:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00052@example.invalid",
+    "customer_id": "CUST-00052",
+    "lines": [
+      {
+        "lot_code": "L2509",
+        "product_id": "PROD-018",
+        "quantity": 1,
+        "unit_price": 2.77
+      }
+    ],
+    "order_id": "ORDER-00052",
+    "ordered_at": "2026-07-16T04:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00053@example.invalid",
+    "customer_id": "CUST-00053",
+    "lines": [
+      {
+        "lot_code": "L2502",
+        "product_id": "PROD-034",
+        "quantity": 3,
+        "unit_price": 2.4
+      }
+    ],
+    "order_id": "ORDER-00053",
+    "ordered_at": "2026-07-16T11:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00054@example.invalid",
+    "customer_id": "CUST-00054",
+    "lines": [
+      {
+        "lot_code": "L2511",
+        "product_id": "PROD-021",
+        "quantity": 3,
+        "unit_price": 3.88
+      }
+    ],
+    "order_id": "ORDER-00054",
+    "ordered_at": "2026-07-16T18:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00055@example.invalid",
+    "customer_id": "CUST-00055",
+    "lines": [
+      {
+        "lot_code": "L2504",
+        "product_id": "PROD-040",
+        "quantity": 1,
+        "unit_price": 4.62
+      }
+    ],
+    "order_id": "ORDER-00055",
+    "ordered_at": "2026-07-17T01:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00056@example.invalid",
+    "customer_id": "CUST-00056",
+    "lines": [
+      {
+        "lot_code": "L2503",
+        "product_id": "PROD-025",
+        "quantity": 3,
+        "unit_price": 5.36
+      }
+    ],
+    "order_id": "ORDER-00056",
+    "ordered_at": "2026-07-17T08:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00057@example.invalid",
+    "customer_id": "CUST-00057",
+    "lines": [
+      {
+        "lot_code": "L2501",
+        "product_id": "PROD-035",
+        "quantity": 3,
+        "unit_price": 2.77
+      }
+    ],
+    "order_id": "ORDER-00057",
+    "ordered_at": "2026-07-17T15:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00058@example.invalid",
+    "customer_id": "CUST-00058",
+    "lines": [
+      {
+        "lot_code": "L2508",
+        "product_id": "PROD-022",
+        "quantity": 1,
+        "unit_price": 4.25
+      }
+    ],
+    "order_id": "ORDER-00058",
+    "ordered_at": "2026-07-17T22:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00059@example.invalid",
+    "customer_id": "CUST-00059",
+    "lines": [
+      {
+        "lot_code": "L2506",
+        "product_id": "PROD-009",
+        "quantity": 2,
+        "unit_price": 5.73
+      }
+    ],
+    "order_id": "ORDER-00059",
+    "ordered_at": "2026-07-18T05:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00060@example.invalid",
+    "customer_id": "CUST-00060",
+    "lines": [
+      {
+        "lot_code": "L2501",
+        "product_id": "PROD-017",
+        "quantity": 1,
+        "unit_price": 2.4
+      }
+    ],
+    "order_id": "ORDER-00060",
+    "ordered_at": "2026-07-18T12:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00061@example.invalid",
+    "customer_id": "CUST-00061",
+    "lines": [
+      {
+        "lot_code": "L2502",
+        "product_id": "PROD-038",
+        "quantity": 1,
+        "unit_price": 3.88
+      }
+    ],
+    "order_id": "ORDER-00061",
+    "ordered_at": "2026-07-18T19:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00062@example.invalid",
+    "customer_id": "CUST-00062",
+    "lines": [
+      {
+        "lot_code": "L2502",
+        "product_id": "PROD-033",
+        "quantity": 3,
+        "unit_price": 8.32
+      }
+    ],
+    "order_id": "ORDER-00062",
+    "ordered_at": "2026-07-19T02:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00063@example.invalid",
+    "customer_id": "CUST-00063",
+    "lines": [
+      {
+        "lot_code": "L2503",
+        "product_id": "PROD-010",
+        "quantity": 3,
+        "unit_price": 6.1
+      }
+    ],
+    "order_id": "ORDER-00063",
+    "ordered_at": "2026-07-19T09:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00064@example.invalid",
+    "customer_id": "CUST-00064",
+    "lines": [
+      {
+        "lot_code": "L2509",
+        "product_id": "PROD-032",
+        "quantity": 1,
+        "unit_price": 7.95
+      }
+    ],
+    "order_id": "ORDER-00064",
+    "ordered_at": "2026-07-19T16:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00065@example.invalid",
+    "customer_id": "CUST-00065",
+    "lines": [
+      {
+        "lot_code": "L2509",
+        "product_id": "PROD-018",
+        "quantity": 3,
+        "unit_price": 2.77
+      }
+    ],
+    "order_id": "ORDER-00065",
+    "ordered_at": "2026-07-19T23:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00066@example.invalid",
+    "customer_id": "CUST-00066",
+    "lines": [
+      {
+        "lot_code": "L2504",
+        "product_id": "PROD-029",
+        "quantity": 3,
+        "unit_price": 6.84
+      }
+    ],
+    "order_id": "ORDER-00066",
+    "ordered_at": "2026-07-20T06:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00067@example.invalid",
+    "customer_id": "CUST-00067",
+    "lines": [
+      {
+        "lot_code": "L2512",
+        "product_id": "PROD-014",
+        "quantity": 2,
+        "unit_price": 7.58
+      }
+    ],
+    "order_id": "ORDER-00067",
+    "ordered_at": "2026-07-20T13:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00068@example.invalid",
+    "customer_id": "CUST-00068",
+    "lines": [
+      {
+        "lot_code": "L2511",
+        "product_id": "PROD-027",
+        "quantity": 3,
+        "unit_price": 6.1
+      }
+    ],
+    "order_id": "ORDER-00068",
+    "ordered_at": "2026-07-20T20:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00069@example.invalid",
+    "customer_id": "CUST-00069",
+    "lines": [
+      {
+        "lot_code": "L2508",
+        "product_id": "PROD-025",
+        "quantity": 3,
+        "unit_price": 5.36
+      }
+    ],
+    "order_id": "ORDER-00069",
+    "ordered_at": "2026-07-21T03:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00070@example.invalid",
+    "customer_id": "CUST-00070",
+    "lines": [
+      {
+        "lot_code": "L2502",
+        "product_id": "PROD-030",
+        "quantity": 1,
+        "unit_price": 7.21
+      }
+    ],
+    "order_id": "ORDER-00070",
+    "ordered_at": "2026-07-21T10:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00071@example.invalid",
+    "customer_id": "CUST-00071",
+    "lines": [
+      {
+        "lot_code": "L2502",
+        "product_id": "PROD-016",
+        "quantity": 2,
+        "unit_price": 8.32
+      }
+    ],
+    "order_id": "ORDER-00071",
+    "ordered_at": "2026-07-21T17:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00072@example.invalid",
+    "customer_id": "CUST-00072",
+    "lines": [
+      {
+        "lot_code": "L2510",
+        "product_id": "PROD-003",
+        "quantity": 3,
+        "unit_price": 4.79
+      }
+    ],
+    "order_id": "ORDER-00072",
+    "ordered_at": "2026-07-22T00:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00073@example.invalid",
+    "customer_id": "CUST-00073",
+    "lines": [
+      {
+        "lot_code": "L2510",
+        "product_id": "PROD-016",
+        "quantity": 1,
+        "unit_price": 8.32
+      }
+    ],
+    "order_id": "ORDER-00073",
+    "ordered_at": "2026-07-22T07:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00074@example.invalid",
+    "customer_id": "CUST-00074",
+    "lines": [
+      {
+        "lot_code": "L2502",
+        "product_id": "PROD-002",
+        "quantity": 3,
+        "unit_price": 5.69
+      }
+    ],
+    "order_id": "ORDER-00074",
+    "ordered_at": "2026-07-22T14:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00075@example.invalid",
+    "customer_id": "CUST-00075",
+    "lines": [
+      {
+        "lot_code": "L2504",
+        "product_id": "PROD-005",
+        "quantity": 1,
+        "unit_price": 4.25
+      }
+    ],
+    "order_id": "ORDER-00075",
+    "ordered_at": "2026-07-22T21:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00076@example.invalid",
+    "customer_id": "CUST-00076",
+    "lines": [
+      {
+        "lot_code": "L2506",
+        "product_id": "PROD-004",
+        "quantity": 1,
+        "unit_price": 6.1
+      }
+    ],
+    "order_id": "ORDER-00076",
+    "ordered_at": "2026-07-23T04:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00077@example.invalid",
+    "customer_id": "CUST-00077",
+    "lines": [
+      {
+        "lot_code": "L2504",
+        "product_id": "PROD-034",
+        "quantity": 2,
+        "unit_price": 2.4
+      }
+    ],
+    "order_id": "ORDER-00077",
+    "ordered_at": "2026-07-23T11:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00078@example.invalid",
+    "customer_id": "CUST-00078",
+    "lines": [
+      {
+        "lot_code": "L2504",
+        "product_id": "PROD-033",
+        "quantity": 3,
+        "unit_price": 8.32
+      }
+    ],
+    "order_id": "ORDER-00078",
+    "ordered_at": "2026-07-23T18:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00079@example.invalid",
+    "customer_id": "CUST-00079",
+    "lines": [
+      {
+        "lot_code": "L2512",
+        "product_id": "PROD-010",
+        "quantity": 3,
+        "unit_price": 6.1
+      }
+    ],
+    "order_id": "ORDER-00079",
+    "ordered_at": "2026-07-24T01:00:00+00:00",
+    "status": "fulfilled"
+  },
+  {
+    "customer_email": "customer00080@example.invalid",
+    "customer_id": "CUST-00080",
+    "lines": [
+      {
+        "lot_code": "L2508",
+        "product_id": "PROD-038",
+        "quantity": 1,
+        "unit_price": 3.88
+      }
+    ],
+    "order_id": "ORDER-00080",
+    "ordered_at": "2026-07-24T08:00:00+00:00",
+    "status": "fulfilled"
+  }
+]

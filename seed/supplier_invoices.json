@@ -1,0 +1,29 @@
+[
+  {
+    "amount": 4200.0,
+    "invoice_id": "SINV-001",
+    "product_ids": [
+      "PROD-001"
+    ],
+    "status": "open",
+    "supplier_id": "SUP-001"
+  },
+  {
+    "amount": 2800.0,
+    "invoice_id": "SINV-002",
+    "product_ids": [
+      "PROD-001"
+    ],
+    "status": "paid",
+    "supplier_id": "SUP-001"
+  },
+  {
+    "amount": 3100.0,
+    "invoice_id": "SINV-003",
+    "product_ids": [
+      "PROD-002"
+    ],
+    "status": "open",
+    "supplier_id": "SUP-002"
+  }
+]

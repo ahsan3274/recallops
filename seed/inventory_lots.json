@@ -1,0 +1,330 @@
+[
+  {
+    "lot_code": "L2408",
+    "lot_id": "LOT-001",
+    "product_id": "PROD-001",
+    "quantity_on_hand": 120,
+    "status": "available",
+    "warehouse_id": "WH-ATL"
+  },
+  {
+    "lot_code": "L2409",
+    "lot_id": "LOT-002",
+    "product_id": "PROD-001",
+    "quantity_on_hand": 160,
+    "status": "available",
+    "warehouse_id": "WH-CHI"
+  },
+  {
+    "lot_code": "L2410",
+    "lot_id": "LOT-003",
+    "product_id": "PROD-001",
+    "quantity_on_hand": 90,
+    "status": "available",
+    "warehouse_id": "WH-DEN"
+  },
+  {
+    "lot_code": "L2501",
+    "lot_id": "LOT-004",
+    "product_id": "PROD-001",
+    "quantity_on_hand": 80,
+    "status": "available",
+    "warehouse_id": "WH-ATL"
+  },
+  {
+    "lot_code": "L2503",
+    "lot_id": "LOT-005",
+    "product_id": "PROD-002",
+    "quantity_on_hand": 60,
+    "status": "available",
+    "warehouse_id": "WH-CHI"
+  },
+  {
+    "lot_code": "L2507",
+    "lot_id": "LOT-006",
+    "product_id": "PROD-005",
+    "quantity_on_hand": 193,
+    "status": "available",
+    "warehouse_id": "WH-ATL"
+  },
+  {
+    "lot_code": "L2508",
+    "lot_id": "LOT-007",
+    "product_id": "PROD-006",
+    "quantity_on_hand": 58,
+    "status": "available",
+    "warehouse_id": "WH-CHI"
+  },
+  {
+    "lot_code": "L2509",
+    "lot_id": "LOT-008",
+    "product_id": "PROD-007",
+    "quantity_on_hand": 36,
+    "status": "available",
+    "warehouse_id": "WH-DEN"
+  },
+  {
+    "lot_code": "L2510",
+    "lot_id": "LOT-009",
+    "product_id": "PROD-008",
+    "quantity_on_hand": 219,
+    "status": "available",
+    "warehouse_id": "WH-ATL"
+  },
+  {
+    "lot_code": "L2511",
+    "lot_id": "LOT-010",
+    "product_id": "PROD-009",
+    "quantity_on_hand": 100,
+    "status": "available",
+    "warehouse_id": "WH-CHI"
+  },
+  {
+    "lot_code": "L2512",
+    "lot_id": "LOT-011",
+    "product_id": "PROD-010",
+    "quantity_on_hand": 92,
+    "status": "available",
+    "warehouse_id": "WH-DEN"
+  },
+  {
+    "lot_code": "L2501",
+    "lot_id": "LOT-012",
+    "product_id": "PROD-011",
+    "quantity_on_hand": 87,
+    "status": "available",
+    "warehouse_id": "WH-ATL"
+  },
+  {
+    "lot_code": "L2502",
+    "lot_id": "LOT-013",
+    "product_id": "PROD-012",
+    "quantity_on_hand": 65,
+    "status": "available",
+    "warehouse_id": "WH-CHI"
+  },
+  {
+    "lot_code": "L2503",
+    "lot_id": "LOT-014",
+    "product_id": "PROD-013",
+    "quantity_on_hand": 218,
+    "status": "available",
+    "warehouse_id": "WH-DEN"
+  },
+  {
+    "lot_code": "L2504",
+    "lot_id": "LOT-015",
+    "product_id": "PROD-014",
+    "quantity_on_hand": 56,
+    "status": "available",
+    "warehouse_id": "WH-ATL"
+  },
+  {
+    "lot_code": "L2505",
+    "lot_id": "LOT-016",
+    "product_id": "PROD-015",
+    "quantity_on_hand": 203,
+    "status": "available",
+    "warehouse_id": "WH-CHI"
+  },
+  {
+    "lot_code": "L2506",
+    "lot_id": "LOT-017",
+    "product_id": "PROD-016",
+    "quantity_on_hand": 219,
+    "status": "available",
+    "warehouse_id": "WH-DEN"
+  },
+  {
+    "lot_code": "L2507",
+    "lot_id": "LOT-018",
+    "product_id": "PROD-017",
+    "quantity_on_hand": 169,
+    "status": "available",
+    "warehouse_id": "WH-ATL"
+  },
+  {
+    "lot_code": "L2508",
+    "lot_id": "LOT-019",
+    "product_id": "PROD-018",
+    "quantity_on_hand": 52,
+    "status": "available",
+    "warehouse_id": "WH-CHI"
+  },
+  {
+    "lot_code": "L2509",
+    "lot_id": "LOT-020",
+    "product_id": "PROD-019",
+    "quantity_on_hand": 181,
+    "status": "available",
+    "warehouse_id": "WH-DEN"
+  },
+  {
+    "lot_code": "L2510",
+    "lot_id": "LOT-021",
+    "product_id": "PROD-020",
+    "quantity_on_hand": 138,
+    "status": "available",
+    "warehouse_id": "WH-ATL"
+  },
+  {
+    "lot_code": "L2511",
+    "lot_id": "LOT-022",
+    "product_id": "PROD-021",
+    "quantity_on_hand": 38,
+    "status": "available",
+    "warehouse_id": "WH-CHI"
+  },
+  {
+    "lot_code": "L2512",
+    "lot_id": "LOT-023",
+    "product_id": "PROD-022",
+    "quantity_on_hand": 37,
+    "status": "available",
+    "warehouse_id": "WH-DEN"
+  },
+  {
+    "lot_code": "L2501",
+    "lot_id": "LOT-024",
+    "product_id": "PROD-023",
+    "quantity_on_hand": 53,
+    "status": "available",
+    "warehouse_id": "WH-ATL"
+  },
+  {
+    "lot_code": "L2502",
+    "lot_id": "LOT-025",
+    "product_id": "PROD-024",
+    "quantity_on_hand": 85,
+    "status": "available",
+    "warehouse_id": "WH-CHI"
+  },
+  {
+    "lot_code": "L2503",
+    "lot_id": "LOT-026",
+    "product_id": "PROD-025",
+    "quantity_on_hand": 89,
+    "status": "available",
+    "warehouse_id": "WH-DEN"
+  },
+  {
+    "lot_code": "L2504",
+    "lot_id": "LOT-027",
+    "product_id": "PROD-026",
+    "quantity_on_hand": 159,
+    "status": "available",
+    "warehouse_id": "WH-ATL"
+  },
+  {
+    "lot_code": "L2505",
+    "lot_id": "LOT-028",
+    "product_id": "PROD-027",
+    "quantity_on_hand": 184,
+    "status": "available",
+    "warehouse_id": "WH-CHI"
+  },
+  {
+    "lot_code": "L2506",
+    "lot_id": "LOT-029",
+    "product_id": "PROD-028",
+    "quantity_on_hand": 36,
+    "status": "available",
+    "warehouse_id": "WH-DEN"
+  },
+  {
+    "lot_code": "L2507",
+    "lot_id": "LOT-030",
+    "product_id": "PROD-029",
+    "quantity_on_hand": 173,
+    "status": "available",
+    "warehouse_id": "WH-ATL"
+  },
+  {
+    "lot_code": "L2508",
+    "lot_id": "LOT-031",
+    "product_id": "PROD-030",
+    "quantity_on_hand": 80,
+    "status": "available",
+    "warehouse_id": "WH-CHI"
+  },
+  {
+    "lot_code": "L2509",
+    "lot_id": "LOT-032",
+    "product_id": "PROD-031",
+    "quantity_on_hand": 213,
+    "status": "available",
+    "warehouse_id": "WH-DEN"
+  },
+  {
+    "lot_code": "L2510",
+    "lot_id": "LOT-033",
+    "product_id": "PROD-032",
+    "quantity_on_hand": 196,
+    "status": "available",
+    "warehouse_id": "WH-ATL"
+  },
+  {
+    "lot_code": "L2511",
+    "lot_id": "LOT-034",
+    "product_id": "PROD-033",
+    "quantity_on_hand": 209,
+    "status": "available",
+    "warehouse_id": "WH-CHI"
+  },
+  {
+    "lot_code": "L2512",
+    "lot_id": "LOT-035",
+    "product_id": "PROD-034",
+    "quantity_on_hand": 169,
+    "status": "available",
+    "warehouse_id": "WH-DEN"
+  },
+  {
+    "lot_code": "L2501",
+    "lot_id": "LOT-036",
+    "product_id": "PROD-035",
+    "quantity_on_hand": 137,
+    "status": "available",
+    "warehouse_id": "WH-ATL"
+  },
+  {
+    "lot_code": "L2502",
+    "lot_id": "LOT-037",
+    "product_id": "PROD-036",
+    "quantity_on_hand": 86,
+    "status": "available",
+    "warehouse_id": "WH-CHI"
+  },
+  {
+    "lot_code": "L2503",
+    "lot_id": "LOT-038",
+    "product_id": "PROD-037",
+    "quantity_on_hand": 144,
+    "status": "available",
+    "warehouse_id": "WH-DEN"
+  },
+  {
+    "lot_code": "L2504",
+    "lot_id": "LOT-039",
+    "product_id": "PROD-038",
+    "quantity_on_hand": 180,
+    "status": "available",
+    "warehouse_id": "WH-ATL"
+  },
+  {
+    "lot_code": "L2505",
+    "lot_id": "LOT-040",
+    "product_id": "PROD-039",
+    "quantity_on_hand": 101,
+    "status": "available",
+    "warehouse_id": "WH-CHI"
+  },
+  {
+    "lot_code": "L2506",
+    "lot_id": "LOT-041",
+    "product_id": "PROD-040",
+    "quantity_on_hand": 237,
+    "status": "available",
+    "warehouse_id": "WH-DEN"
+  }
+]

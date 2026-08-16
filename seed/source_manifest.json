@@ -1,0 +1,11 @@
+[
+  {
+    "licence": "MIT",
+    "orders": 80,
+    "products": 40,
+    "random_seed": 42,
+    "retrieved_at": "2026-08-16T00:00:00Z",
+    "source": "RecallOps deterministic generator",
+    "transform_version": "0.1.0"
+  }
+]

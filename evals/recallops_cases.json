@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "cases": [
+    {
+      "id": "normal_exact_recall",
+      "description": "An exact internal product and lot match is contained autonomously.",
+      "expected": ["listing_frozen", "lots_quarantined", "notifications_prepared"]
+    },
+    {
+      "id": "ambiguous_private_label",
+      "description": "An unresolved private-label identifier cannot mutate product state.",
+      "expected": ["approval_required", "no_active_recall"]
+    },
+    {
+      "id": "duplicate_event",
+      "description": "A repeated event ID produces no second mutation.",
+      "expected": ["duplicate_ignored", "single_late_lot_quantity"]
+    },
+    {
+      "id": "late_inventory_arrival",
+      "description": "A recalled lot received after containment is quarantined immediately.",
+      "expected": ["lot_quarantined", "warehouse_task_created"]
+    },
+    {
+      "id": "expired_supplier_certification",
+      "description": "A cheaper expired offer is disqualified in favor of a valid supplier.",
+      "expected": ["expired_offer_rejected", "compliant_supplier_selected"]
+    },
+    {
+      "id": "approval_required_financial_actions",
+      "description": "Purchase orders and claims above deterministic limits remain pending.",
+      "expected": ["po_approval_requested", "claim_approval_requested"]
+    }
+  ]
+}

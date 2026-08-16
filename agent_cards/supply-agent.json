@@ -1,0 +1,16 @@
+{
+  "protocolVersion": "0.3.0",
+  "name": "Supply Continuity",
+  "description": "Projects stockouts, evaluates compliant replacement suppliers, and creates bounded purchase orders.",
+  "url": "http://localhost:8000/a2a",
+  "version": "0.1.0",
+  "preferredTransport": "JSONRPC",
+  "capabilities": {"streaming": false, "pushNotifications": false, "stateTransitionHistory": false},
+  "defaultInputModes": ["text/plain", "application/json"],
+  "defaultOutputModes": ["text/plain", "application/json"],
+  "skills": [
+    {"id": "stockout_projection", "name": "Stockout projection", "description": "Estimate days of safe inventory remaining after containment.", "tags": ["inventory", "forecasting"]},
+    {"id": "supplier_evaluation", "name": "Supplier evaluation", "description": "Compare approved offers using certification, lead time, capacity, reliability, and price.", "tags": ["supplier", "certification", "procurement"]},
+    {"id": "purchase_order_creation", "name": "Purchase order creation", "description": "Create a policy-bounded replacement purchase order.", "tags": ["purchase-order", "approval"]}
+  ]
+}

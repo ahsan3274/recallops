@@ -1,0 +1,30 @@
+[
+  {
+    "approved_vendor": true,
+    "certificate_status": "valid",
+    "name": "Orchard Peak Foods",
+    "reliability": 0.91,
+    "supplier_id": "SUP-001"
+  },
+  {
+    "approved_vendor": true,
+    "certificate_status": "valid",
+    "name": "SafeHarbor Foods",
+    "reliability": 0.94,
+    "supplier_id": "SUP-002"
+  },
+  {
+    "approved_vendor": true,
+    "certificate_status": "expired",
+    "name": "Budget Pantry Co",
+    "reliability": 0.88,
+    "supplier_id": "SUP-003"
+  },
+  {
+    "approved_vendor": true,
+    "certificate_status": "valid",
+    "name": "LongRoad Organics",
+    "reliability": 0.86,
+    "supplier_id": "SUP-004"
+  }
+]

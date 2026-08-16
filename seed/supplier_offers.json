@@ -1,0 +1,38 @@
+[
+  {
+    "available_quantity": 5000,
+    "certificate_status": "valid",
+    "freight_cost": 250.0,
+    "lead_time_days": 1,
+    "minimum_order": 200,
+    "offer_id": "OFFER-001",
+    "product_id": "PROD-002",
+    "replacement_for": "PROD-001",
+    "supplier_id": "SUP-002",
+    "unit_price": 3.4
+  },
+  {
+    "available_quantity": 8000,
+    "certificate_status": "expired",
+    "freight_cost": 210.0,
+    "lead_time_days": 1,
+    "minimum_order": 150,
+    "offer_id": "OFFER-002",
+    "product_id": "PROD-003",
+    "replacement_for": "PROD-001",
+    "supplier_id": "SUP-003",
+    "unit_price": 2.75
+  },
+  {
+    "available_quantity": 7000,
+    "certificate_status": "valid",
+    "freight_cost": 175.0,
+    "lead_time_days": 5,
+    "minimum_order": 200,
+    "offer_id": "OFFER-003",
+    "product_id": "PROD-004",
+    "replacement_for": "PROD-001",
+    "supplier_id": "SUP-004",
+    "unit_price": 3.1
+  }
+]

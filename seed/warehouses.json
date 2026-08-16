@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Atlanta Distribution Center",
+    "region": "US-SE",
+    "warehouse_id": "WH-ATL"
+  },
+  {
+    "name": "Chicago Distribution Center",
+    "region": "US-MW",
+    "warehouse_id": "WH-CHI"
+  },
+  {
+    "name": "Denver Distribution Center",
+    "region": "US-W",
+    "warehouse_id": "WH-DEN"
+  }
+]

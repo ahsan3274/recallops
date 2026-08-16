@@ -1,0 +1,15 @@
+{
+  "protocolVersion": "0.3.0",
+  "name": "Recall Coordinator",
+  "description": "Matches recall notices to products and lots, contains inventory, and coordinates customer, supply, and finance recovery.",
+  "url": "http://localhost:8000/a2a",
+  "version": "0.1.0",
+  "preferredTransport": "JSONRPC",
+  "capabilities": {"streaming": false, "pushNotifications": false, "stateTransitionHistory": false},
+  "defaultInputModes": ["text/plain", "application/json"],
+  "defaultOutputModes": ["text/plain", "application/json"],
+  "skills": [
+    {"id": "recall_assessment", "name": "Recall assessment", "description": "Extract and match products, identifiers, and affected lot codes.", "tags": ["recall", "matching", "approval"]},
+    {"id": "recall_containment", "name": "Recall containment", "description": "Freeze listings, quarantine affected lots, and prepare customer notifications.", "tags": ["inventory", "safety", "notifications"]}
+  ]
+}
